@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PB_App
 {
-    public partial class Form1 : Form
+    public partial class MyQuizzes : Form
     {
-        public Form1()
+        public MyQuizzes()
         {
             InitializeComponent();
         }
