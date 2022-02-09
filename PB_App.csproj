@@ -88,6 +88,11 @@
     <Compile Include="MyQuizzes.Designer.cs">
       <DependentUpon>MyQuizzes.cs</DependentUpon>
     </Compile>
+    <Compile Include="pb_appDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pb_appDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +100,11 @@
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="proj_studentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>proj_studentDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
@@ -138,6 +148,28 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="pb_appDataSet.xsc">
+      <DependentUpon>pb_appDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pb_appDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pb_appDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pb_appDataSet.xss">
+      <DependentUpon>pb_appDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="proj_studentDataSet.xsc">
+      <DependentUpon>proj_studentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="proj_studentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>proj_studentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="proj_studentDataSet.xss">
+      <DependentUpon>proj_studentDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
