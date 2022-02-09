@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyProfessor));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,7 +38,16 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pb_appDataSet = new PB_App.pb_appDataSet();
+            this.pbappDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pbappDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.chckProf = new System.Windows.Forms.Button();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_appDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbappDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbappDataSetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -65,6 +75,7 @@
             this.button3.Text = "My Courses";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button6
             // 
@@ -81,6 +92,7 @@
             this.button6.Text = "Find Courses";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -97,6 +109,7 @@
             this.button7.Text = "Logout";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 
@@ -114,6 +127,7 @@
             this.button4.Text = "My Quizzes";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -146,6 +160,7 @@
             this.button2.Text = "Profile";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -162,12 +177,54 @@
             this.button1.Text = "Dashboard";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pb_appDataSet
+            // 
+            this.pb_appDataSet.DataSetName = "pb_appDataSet";
+            this.pb_appDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pbappDataSetBindingSource
+            // 
+            this.pbappDataSetBindingSource.DataSource = this.pb_appDataSet;
+            this.pbappDataSetBindingSource.Position = 0;
+            // 
+            // pbappDataSetBindingSource1
+            // 
+            this.pbappDataSetBindingSource1.DataSource = this.pb_appDataSet;
+            this.pbappDataSetBindingSource1.Position = 0;
+            // 
+            // chckProf
+            // 
+            this.chckProf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.chckProf.FlatAppearance.BorderSize = 0;
+            this.chckProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chckProf.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckProf.ForeColor = System.Drawing.Color.White;
+            this.chckProf.Location = new System.Drawing.Point(464, 439);
+            this.chckProf.Name = "chckProf";
+            this.chckProf.Size = new System.Drawing.Size(177, 52);
+            this.chckProf.TabIndex = 39;
+            this.chckProf.Text = "Show Professors";
+            this.chckProf.UseVisualStyleBackColor = false;
+            this.chckProf.Click += new System.EventHandler(this.chckProf_Click);
+            // 
+            // dgv1
+            // 
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(289, 88);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(492, 293);
+            this.dgv1.TabIndex = 40;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // MyProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 546);
+            this.Controls.Add(this.dgv1);
+            this.Controls.Add(this.chckProf);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
@@ -181,6 +238,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyProfessor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_appDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbappDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbappDataSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,5 +255,10 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private pb_appDataSet pb_appDataSet;
+        private System.Windows.Forms.BindingSource pbappDataSetBindingSource;
+        private System.Windows.Forms.BindingSource pbappDataSetBindingSource1;
+        private System.Windows.Forms.Button chckProf;
+        private System.Windows.Forms.DataGridView dgv1;
     }
 }

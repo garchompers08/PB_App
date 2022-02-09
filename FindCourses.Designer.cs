@@ -37,7 +37,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.chckCourses = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -66,6 +69,7 @@
             this.button3.Text = "My Courses";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button6
             // 
@@ -98,6 +102,7 @@
             this.button7.Text = "Logout";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 
@@ -115,6 +120,7 @@
             this.button4.Text = "My Quizzes";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -131,6 +137,7 @@
             this.button5.Text = "Find Professor";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
@@ -147,6 +154,7 @@
             this.button2.Text = "Profile";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -163,12 +171,39 @@
             this.button1.Text = "Dashboard";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgv1
+            // 
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(274, 64);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(492, 293);
+            this.dgv1.TabIndex = 42;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
+            // 
+            // chckCourses
+            // 
+            this.chckCourses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.chckCourses.FlatAppearance.BorderSize = 0;
+            this.chckCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chckCourses.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckCourses.ForeColor = System.Drawing.Color.White;
+            this.chckCourses.Location = new System.Drawing.Point(449, 415);
+            this.chckCourses.Name = "chckCourses";
+            this.chckCourses.Size = new System.Drawing.Size(216, 52);
+            this.chckCourses.TabIndex = 41;
+            this.chckCourses.Text = "Show Available Courses";
+            this.chckCourses.UseVisualStyleBackColor = false;
+            this.chckCourses.Click += new System.EventHandler(this.chckCourses_Click);
             // 
             // FindCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 546);
+            this.Controls.Add(this.dgv1);
+            this.Controls.Add(this.chckCourses);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
@@ -182,6 +217,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FindCourses";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +231,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.Button chckCourses;
     }
 }

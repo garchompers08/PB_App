@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.username = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.studentID = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -48,6 +48,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -59,44 +60,48 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // username
+            // studentID
             // 
-            this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(203)))), ((int)(((byte)(55)))));
-            this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username.ForeColor = System.Drawing.Color.White;
-            this.username.Location = new System.Drawing.Point(102, 251);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(177, 13);
-            this.username.TabIndex = 2;
-            this.username.Text = "someone@adress.com";
-            this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
+            this.studentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(203)))), ((int)(((byte)(55)))));
+            this.studentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.studentID.ForeColor = System.Drawing.Color.White;
+            this.studentID.Location = new System.Drawing.Point(102, 251);
+            this.studentID.Name = "studentID";
+            this.studentID.Size = new System.Drawing.Size(177, 13);
+            this.studentID.TabIndex = 2;
+            this.studentID.Text = "someone@adress.com";
+            this.studentID.TextChanged += new System.EventHandler(this.username_TextChanged);
+            this.studentID.Enter += new System.EventHandler(this.txtUsernameEnter);
+            this.studentID.Leave += new System.EventHandler(this.txtUsernameLeave);
             // 
-            // password
+            // pass
             // 
-            this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(203)))), ((int)(((byte)(55)))));
-            this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password.ForeColor = System.Drawing.Color.White;
-            this.password.Location = new System.Drawing.Point(102, 305);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(177, 13);
-            this.password.TabIndex = 3;
-            this.password.Text = "********";
-            this.password.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(203)))), ((int)(((byte)(55)))));
+            this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pass.ForeColor = System.Drawing.Color.White;
+            this.pass.Location = new System.Drawing.Point(102, 305);
+            this.pass.Name = "pass";
+            this.pass.Size = new System.Drawing.Size(177, 13);
+            this.pass.TabIndex = 3;
+            this.pass.Text = "********";
+            this.pass.TextChanged += new System.EventHandler(this.password_TextChanged);
+            this.pass.Enter += new System.EventHandler(this.txtPasswordEnter);
+            this.pass.Leave += new System.EventHandler(this.txtPasswordLeave);
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(91, 361);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 52);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(91, 361);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(144, 52);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -120,9 +125,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(194)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(353, 521);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.username);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.pass);
+            this.Controls.Add(this.studentID);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -140,9 +145,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox studentID;
+        private System.Windows.Forms.TextBox pass;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button button2;
     }
 }

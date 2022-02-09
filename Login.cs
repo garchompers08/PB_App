@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 
 namespace PB_App
 {
+    
     public partial class Login : Form
     {
         SqlConnection con = new SqlConnection();
@@ -37,18 +38,19 @@ namespace PB_App
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             con.Open();
             com.Connection=con;
-            com.CommandText = "select * from profiles ";
+            com.CommandText = "select * from profiles";
             SqlDataReader dr = com.ExecuteReader();
             if (dr.Read())
             {
-                if (username.Text.Equals(dr["studentID"].ToString()) && password.Text.Equals(dr["pass"].ToString()))
+                if (studentID.Text.Equals(dr["studentID"].ToString()) && pass.Text.Equals(dr["pass"].ToString()))
                 {
-                    MessageBox.Show("not Error");
-                    //Dashboard button = new Dashboard();
-                    //button.ShowDialog();
-                    //this.Close();
+                    
+                    Dashboard button = new Dashboard();
+                    button.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
@@ -60,7 +62,7 @@ namespace PB_App
 
         private void username_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtPass(object sender, EventArgs e)
@@ -69,6 +71,48 @@ namespace PB_App
         }
 
         private void txtUsername(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsernameEnter(object sender, EventArgs e)
+        {
+            if (studentID.Text.Equals(@"Username"))
+            {
+                studentID.Text = "";
+            }
+        }
+
+        private void txtUsernameLeave(object sender, EventArgs e)
+        {
+            if (studentID.Text.Equals(""))
+            {
+                studentID.Text = @"Username";
+            }
+        }
+
+        private void txtPasswordEnter(object sender, EventArgs e)
+        {
+            if (pass.Text.Equals("password"))
+            {
+                pass.Text = "";
+            }
+        }
+
+        private void txtPasswordLeave(object sender, EventArgs e)
+        {
+            if (pass.Text.Equals(""))
+            {
+                pass.Text = "Password";
+            }
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

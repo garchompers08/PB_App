@@ -19,23 +19,28 @@ namespace PB_App
 
         private void Login_Click(object sender, EventArgs e)
         {
-            Login button = new Login();
-            button.ShowDialog();
             this.Hide();
+            var Login = new Login();
+            Login.Closed += (s, args) => this.Close();
+            Login.Show();
 
 
         }
 
         private void Signup_Click(object sender, EventArgs e)
         {
-            Signup button = new Signup();
-            button.ShowDialog();
-            this.Close();
+            this.Hide();
+            var Signup = new Signup();
+            Signup.Closed += (s, args) => this.Close();
+            Signup.Show();
         }
 
         private void About_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var About = new About();
+            About.Closed += (s, args) => this.Close();
+            About.Show();
         }
     }
 }
